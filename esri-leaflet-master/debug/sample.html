@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Esri Leaflet Debugging Sample</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+
+    <!-- Load Leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+
+    <!-- Load Esri Leaflet from source-->
+    <script src="../dist/esri-leaflet-debug.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+
+      #info-pane {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        padding: 1em;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="info-pane" class="leaflet-bar">
+      <label> sample application for debugging </label>
+    </div>
+
+    <script>
+      /*
+    make a copy of this file in the same folder if you'd like git to ignore your local changes
+    */
+      var map = L.map("map").setView([43.5, -98.5], 6);
+
+      L.esri.basemapLayer("Topographic").addTo(map);
+
+      var fl = L.esri
+        .featureLayer({
+          url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/flash_flood_warnings_2002_2012/FeatureServer/0",
+        })
+        .addTo(map);
+
+      L.esri
+        .dynamicMapLayer({
+          url: "https://sampleserver6.arcgisonline.com/arcgis/rest/services/Elevation/WorldElevations/MapServer",
+          opacity: 0.4,
+        })
+        .addTo(map);
+    </script>
+  </body>
+</html>
