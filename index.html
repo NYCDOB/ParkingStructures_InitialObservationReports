@@ -344,11 +344,11 @@ svg {
 }
 
 input:checked + #sliderOnTime {
-  background-color: #48c761;
+  background-color: #89b05b;
 }
 
 input:focus + #sliderOnTime {
-  box-shadow: 0 0 1px #48c761;
+  box-shadow: 0 0 1px #89b05b;
 }
 input:checked + #sliderNotSub {
   background-color: #942323;
@@ -358,11 +358,11 @@ input:focus + #sliderNotSub {
   box-shadow: 0 0 1px #942323;
 }
 input:checked + #sliderLate {
-  background-color: #b3c215;
+  background-color: #cdcf57;
 }
 
 input:focus + #sliderLate {
-  box-shadow: 0 0 1px #b3c215;
+  box-shadow: 0 0 1px #cdcf57;
 }
 input:checked + #sliderNotRqd {
   background-color: #adadac;
@@ -510,7 +510,7 @@ hr { margin: 0.1em auto; }
 	& .dlData:hover {text-decoration:underline;}
 }
 .pointOnTime{
-	fill: #48c761;
+	fill: #89b05b;
 	fill-opacity: .7;
 }
 .pointNotSub{
@@ -518,7 +518,7 @@ hr { margin: 0.1em auto; }
 	fill-opacity: .7;
 }
 .pointLate{
-	fill: #b3c215;
+	fill: #cdcf57;
 	fill-opacity: .7;
 }
 .pointNotReqd{
@@ -1045,7 +1045,7 @@ function ready(){
 				//.xDomain(['Manhattan', 'Bronx', 'Brooklyn', 'Queens', 'Staten Island'])
 				.xDomain(sortData)
 				.color(
-				['#48c761','#b3c215','#942323','#adadac'])
+				['#89b05b','#cdcf57','#942323','#adadac'])
 				.showControls(false)
 				.stacked(true);
 				chart.legend.margin({bottom: 25});
@@ -1243,7 +1243,7 @@ function ready(){
 						})
 						.duration(250)
 						.margin({top: 15, right: 10, bottom: 20, left: 50})
-						.color(['#48c761','#b3c215','#942323','#adadac']);
+						.color(['#89b05b','#cdcf57','#942323','#adadac']);
 					chart.yAxis.tickFormat(d3.format(','));
 
 					chart.xAxis.tickFormat(function(d){
