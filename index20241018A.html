@@ -23,6 +23,18 @@ body {
 	height: 50px;
 	width: 110px;	  
 }
+.footr{ 
+	background-color: black;
+    display: flex;
+    color: white;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 700;
+    font-size: smaller;
+    height: 40px;
+    align-items: center;
+	& a {color:white;}
+}
 #map {
     border: 1px solid black;
     position: relative;
@@ -585,6 +597,9 @@ justify-items: baseline;
 justify-content: space-between;
 column-gap:30px;
 }
+a.nolinkstyle:focus, 
+a.nolinkstyle:visited, 
+a.nolinkstyle:active {	text-decoration:none;	color:white;}
 </style>
 <body>
 
@@ -661,6 +676,11 @@ The initial observation requirement applies to parking structures in Community D
 						</div>
 					</div>
 </div>
+</div>
+
+<div class="footr">
+	<div><a class="nolinkstyle" href="https://www.nyc.gov/home/privacy-policy.page" target="_blank">Privacy Policy</a></div>
+	<div><a class="nolinkstyle" href="https://www.nyc.gov/home/terms-of-use.page" target="_blank">Terms of Use</a></div>
 </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
